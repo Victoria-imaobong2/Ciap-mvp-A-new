@@ -1,0 +1,69 @@
+%% SYSTEM ARCHITECTURE DIAGRAM
+%% Team A - CIAP MVP
+%% This diagram shows how data flows from external platforms through our system to the user.
+
+graph TD
+    %% --- Color Definitions for Noobs ---
+    classDef external fill:#ffcccc,stroke:#cc0000,stroke-width:2px,color:#000
+    classDef data fill:#cce5ff,stroke:#004085,stroke-width:2px,color:#000
+    classDef backend fill:#fff3cd,stroke:#856404,stroke-width:2px,color:#000
+    classDef frontend fill:#d4edda,stroke:#155724,stroke-width:2px,color:#000
+    classDef user fill:#e2d5f1,stroke:#5a3d7e,stroke-width:2px,color:#000
+
+    subgraph "External Platforms (Data Sources)"
+        YT[YouTube API]:::external
+        IG[Instagram Graph API]:::external
+        TK[TikTok API]:::external
+        X[Twitter/X API]:::external
+        SP[Spotify API]:::external
+        FB[Facebook API]:::external
+    end
+
+    subgraph "Data Engineering Domain (Kosisochukwu - DATA/)"
+        INGEST[Ingestion Service<br/>Async Background Tasks]:::data
+        NORM[Data Normalizer<br/>Unified Schema]:::data
+        DB[(PostgreSQL<br/>Main Database)]:::data
+        REPO_INT[Repository Interfaces<br/>Abstract Contracts]:::data
+    end
+
+    subgraph "Backend Domain (Samuel/Victoria - backend/)"
+        AUTH[Auth Service<br/>JWT + OAuth2]:::backend
+        API[FastAPI Endpoints<br/>RESTful JSON]:::backend
+        REPO_IMPL[Repository Implementations<br/>SQLAlchemy ORM]:::backend
+        ML[ML Scoring Logic<br/>Week 4]:::backend
+    end
+
+    subgraph "Frontend Domain (Marcel/Clement - frontend/)"
+        REACT[React Web App<br/>Mobile Responsive]:::frontend
+        I18N[i18n Layer<br/>Eng/Pidgin/Yoruba/Igbo/Hausa]:::frontend
+    end
+
+    subgraph "Users"
+        CREATOR[Creator]:::user
+        SME[SME / Agency]:::user
+    end
+
+    %% --- Data Flow Connections ---
+    YT --> INGEST
+    IG --> INGEST
+    TK --> INGEST
+    X --> INGEST
+    SP --> INGEST
+    FB --> INGEST
+
+    INGEST --> NORM
+    NORM --> DB
+
+    CREATOR --> REACT
+    SME --> REACT
+    REACT --> API
+    API --> AUTH
+    API --> REPO_IMPL
+    REPO_IMPL --> REPO_INT
+    REPO_INT --> DB
+    API --> ML
+
+    %% --- Notes for Noobs ---
+    %% - Data Engineer owns everything in DATA/ folder.
+    %% - Backend imports Pydantic models from DATA/.
+    %% - Frontend builds UI based on shapes in DATA/models/responses/.

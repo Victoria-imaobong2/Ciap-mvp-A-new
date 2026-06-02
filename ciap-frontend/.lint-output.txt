@@ -1,0 +1,29 @@
+
+> ciap-frontend@0.1.0 lint
+> eslint
+
+
+/home/inspiuser/Desktop/work/ciap/ciap-mvp-a/ciap-frontend/src/app/page.tsx
+  391:10  error  Parsing error: ')' expected
+
+/home/inspiuser/Desktop/work/ciap/ciap-mvp-a/ciap-frontend/src/components/dashboard/ContentCard.tsx
+  56:9  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/home/inspiuser/Desktop/work/ciap/ciap-mvp-a/ciap-frontend/src/components/dashboard/DashboardNavbar.tsx
+   90:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  151:13  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/home/inspiuser/Desktop/work/ciap/ciap-mvp-a/ciap-frontend/src/features/auth/components/reset-password-form.tsx
+  3:8  warning  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+/home/inspiuser/Desktop/work/ciap/ciap-mvp-a/ciap-frontend/src/features/auth/components/verify-email-form.tsx
+  4:28  warning  'useEffect' is defined but never used  @typescript-eslint/no-unused-vars
+
+/home/inspiuser/Desktop/work/ciap/ciap-mvp-a/ciap-frontend/src/sme-discovery/forecaster/page.tsx
+  2:48  warning  'YAxis' is defined but never used  @typescript-eslint/no-unused-vars
+
+/home/inspiuser/Desktop/work/ciap/ciap-mvp-a/ciap-frontend/src/sme-discovery/roi-ledger/page.tsx
+  9:19  warning  'setMetrics' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+✖ 8 problems (1 error, 7 warnings)
+

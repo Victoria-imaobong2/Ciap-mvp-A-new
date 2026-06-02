@@ -1,0 +1,35 @@
+graph TD
+    %% USE CASE DIAGRAM - Who can do what?
+    C(Creator)
+    S(SME)
+    SYS(System Cron Job - I think)
+
+    subgraph "Creator Use Cases"
+        C --> UC1[Manage Profile]
+        C --> UC2[Connect Social Platforms]
+        C --> UC3[View Unified Dashboard]
+        C --> UC4[Drill Down on Content Metrics]
+        C --> UC5[Export PDF Report]
+        C --> UC6[Toggle Language]
+        C --> UC7[Set Profile Public/Private]
+    end
+
+    subgraph "SME Use Cases"
+        S --> UC8[Search Creators by Niche/Location]
+        S --> UC9[View Public Creator Profile]
+        S --> UC10[Compare Up To 3 Creators]
+        S --> UC11[Create Campaign Forecast]
+        S --> UC12[Track Live Campaign ROI]
+    end
+
+    subgraph "Automated System Use Cases"
+        SYS --> UC13[Refresh OAuth Tokens]
+        SYS --> UC14[Fetch & Normalize API Data]
+        SYS --> UC15[Calculate Weekly Influence Score]
+    end
+
+    %% RBAC Constraints (The Tiny Intricacies)
+    UC3 -.->|must be authenticated as Creator| C
+    UC8 -.->|must be logged in as SME| S
+    UC9 -.->|requires is_public == true OR Creator consent| S
+    UC10 -.->|requires at least 2 creators selected| S
