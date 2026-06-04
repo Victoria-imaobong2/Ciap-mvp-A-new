@@ -84,7 +84,7 @@ If that prints without error, the database connection is working and you're good
 uvicorn backend.main:app --reload --port 8000
 ```
 
-Go to `http://localhost:8000/docs` — you should see the FastAPI Swagger UI.
+Go to `https://ciap-mvp-backend.onrender.com/docs` — you should see the FastAPI Swagger UI.
 
 ---
 

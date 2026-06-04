@@ -343,7 +343,7 @@ python seeds/seed.py --reset
 uvicorn backend.main:app --reload --port 8000
 ```
 
-Open `http://localhost:8000/docs` to access the interactive Swagger UI.
+Open `http://ciap-mvp-backend.onrender.com/docs/docs` to access the interactive Swagger UI.
 
 ### 10. Start the Frontend
 
@@ -417,8 +417,8 @@ The full API reference is available in [`API-REFERENCE.md`](API-REFERENCE.md).
 
 When the server is running, interactive docs are available at:
 
-- **Swagger UI:** `http://localhost:8000/docs`
-- **ReDoc:** `http://localhost:8000/redoc`
+- **Swagger UI:** `http://ciap-mvp-backend.onrender.com/docs/docs`
+- **ReDoc:** `http://ciap-mvp-backend.onrender.com/docs/redoc`
 
 ### Key Endpoint Groups
 
@@ -464,14 +464,14 @@ The CIAP MVP was delivered across a 6-week development cycle:
 
 ## Team Roles
 
-| Name                               | Role               | Domain                                                                                                               |
-| ---------------------------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------- |
-| **Ugwumba Akachukwu Mac-Anointed** | Project Manager             | Sprint planning, team coordination, milestone tracking, stakeholder communication, and MVP delivery oversight        |
-| **Okafor Kosisochukwu**                | Data Engineer & Backend     | `DATA/` `ciap-backend/`                                 |
-| **Samuel**                         | Backend Developer           | `ciap-backend/`                                                 |
-| **Imaobong Victoria**                       | Frontend Developer          | `ciap-frontend/`                                                    |
-| **Okereke Clement Kalu**                        | Frontend Developer          | `ciap-frontend/`                                               |
-| **Ifeanyichukwu Chukwudubem**      | UI/UX Designer     | User interface design, wireframing, prototyping, design system, and user experience across creator and SME workflows |
+| Name                               | Role                    | Domain                                                                                                               |
+| ---------------------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **Ugwumba Akachukwu Mac-Anointed** | Project Manager         | Sprint planning, team coordination, milestone tracking, stakeholder communication, and MVP delivery oversight        |
+| **Okafor Kosisochukwu**            | Data Engineer & Backend | `DATA/` `ciap-backend/`                                                                                              |
+| **Samuel**                         | Backend Developer       | `ciap-backend/`                                                                                                      |
+| **Imaobong Victoria**              | Frontend Developer      | `ciap-frontend/`                                                                                                     |
+| **Okereke Clement Kalu**           | Frontend Developer      | `ciap-frontend/`                                                                                                     |
+| **Ifeanyichukwu Chukwudubem**      | UI/UX Designer          | User interface design, wireframing, prototyping, design system, and user experience across creator and SME workflows |
 
 ---
 
@@ -489,7 +489,6 @@ fix/short-description           # Bug fix
 docs/short-description          # Documentation only
 refactor/short-description      # Code refactor without behavior change
 ```
-
 
 **Pull Request workflow:**
 
