@@ -7,8 +7,7 @@ const getAuthHeaders = () => {
   };
 };
 
-const API_URL = (process.env.NEXT_PUBLIC_API_URL || "https://ciap-mvp-backend.onrender.com").replace(/\/$/, "");
-const BASE_URL = `${API_URL}/api/v1`;
+const BASE_URL = "https://ciap-mvp-backend.onrender.com/api/v1";
 
 export const apiService = {
   // POST /api/v1/auth/login
@@ -133,7 +132,7 @@ export const apiService = {
   },
 
   // SME: POST /api/v1/campaigns
-  createCampaign: async (data: any) => {
+  createCampaign: async (data: unknown) => {
     const response = await fetch(`${BASE_URL}/campaigns`, {
       method: "POST",
       headers: {
