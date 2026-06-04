@@ -7,7 +7,7 @@ const getAuthHeaders = () => {
   };
 };
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://ciap-mvp-backend.onrender.com/docs";
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://ciap-mvp-backend.onrender.com";
 
 export const apiService = {
   // POST /api/v1/auth/login
